@@ -8,10 +8,9 @@ import (
 	"gocv.io/x/gocv"
 )
 
-func main1() {
+func main3() {
 	// set to use a video capture device 0
 	deviceID := 0
-
 	// open webcam
 	webcam, err := gocv.OpenVideoCapture(deviceID)
 	if err != nil {
@@ -19,15 +18,12 @@ func main1() {
 		return
 	}
 	defer webcam.Close()
-
 	// open display window
 	window := gocv.NewWindow("Face Detect")
 	defer window.Close()
-
 	// prepare image matrix
 	img := gocv.NewMat()
 	defer img.Close()
-
 	// color for the rect when faces detected
 	blue := color.RGBA{0, 0, 255, 0}
 
